@@ -1,7 +1,7 @@
 {
-  "name": "graphql-node-api",
+  "name": "graphql-nodejs-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "studying-graphql",
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/nodemon --delay 5 dist/index",
