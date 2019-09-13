@@ -22,6 +22,7 @@ export const commentResolvers = {
 
     Query : {
         commentsByPost : (parent, {id, first = 10, offset = 0}, {db} : {db: DbConnection}, info: GraphQLResolveInfo) => {
+            id = parseInt(id)
             return db.Comment
                 .findAll({
                     where: { post: id},
