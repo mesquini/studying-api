@@ -3,7 +3,6 @@ import { GraphQLFieldResolver } from "graphql";
 import { ComposableResolver } from "./composable.resolver";
 import { ResolverContext } from "../../interfaces/ResolverContextInterface";
 import { jwt_SECRET } from '../../utils/utils';
-import { resolve } from 'bluebird';
 
 export const verifyTokenResolver: ComposableResolver<any, ResolverContext> =
     (resolver: GraphQLFieldResolver<any, ResolverContext>):GraphQLFieldResolver<any, ResolverContext> =>{

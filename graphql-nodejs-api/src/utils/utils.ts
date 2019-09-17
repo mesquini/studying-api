@@ -44,4 +44,8 @@ export const handleError = (error: Error) =>{
     
 }
 
+export const throwError = (condition: boolean, message: string): void =>{
+    if(condition) throw new Error(message)
+}
+
 export const jwt_SECRET: string = process.env.JWT_SECRET || 'iron_man';
