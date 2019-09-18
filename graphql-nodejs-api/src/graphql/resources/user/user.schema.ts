@@ -32,6 +32,8 @@ const userQueries = `
     users(first: Int, offset: Int): [User!]!
 
     user(id: ID!): User
+
+    currentUser: User
 `
 
 const userMutations = `

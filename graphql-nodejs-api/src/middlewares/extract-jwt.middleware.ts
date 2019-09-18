@@ -2,6 +2,7 @@ import * as jwt from 'jsonwebtoken'
 import db from './../models'
 import { RequestHandler, Request, Response, NextFunction } from "express";
 import { UserInstance } from '../models/UserModel';
+import { jwt_SECRET } from '../utils/utils';
 
 export const extractJwtMddleware = (): RequestHandler => {
     return (req:Request,res:Response,next:NextFunction): void =>{
@@ -13,7 +14,7 @@ export const extractJwtMddleware = (): RequestHandler => {
 
         if(!token) return next()
 
-        jwt.verify(token, process.env.JWT_SECRET, (err, decoded:any)=>{
+        jwt.verify(token, jwt_SECRET, (err, decoded:any)=>{
             if(err) return next()
 
             db.User.findById(decoded.sub, {
